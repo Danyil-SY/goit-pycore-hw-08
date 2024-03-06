@@ -96,12 +96,12 @@ def show_all(book: AddressBook) -> dict:
         return "Book is empty."
     return book
 
-def save_data(book, filename="addressbook.pkl"):
+def save_data(book: Any, filename: str = "addressbook.pkl") -> None:
     """Save address book data to a file."""
     with open(filename, "wb") as file:
         pickle.dump(book, file)
 
-def load_data(filename="addressbook.pkl"):
+def load_data(filename: str = "addressbook.pkl") -> Any:
     """Load address book data from a file."""
     try:
         with open(filename, "rb") as file:
